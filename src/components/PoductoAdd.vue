@@ -20,6 +20,24 @@
              
               
             </form>
+            <form @submit.prevent="Ingresso">
+                <h1>Productos</h1>
+                <label for="name" class="label">Nombre:</label>
+                <input type="text" v-model="name" placeholder="">
+                <p v-if="name.length > 15" class="error">El nombre no puede tener más de 15 caracteres.</p>
+
+                <label for="quantity" class="label">Cantidad:</label>
+                <input type="int" v-model="quantity" placeholder="">
+                <p v-if="quantity.length > 15" class="error">El nombre no puede tener más de 15 caracteres.</p>
+
+                <label for="category" class="label">Categoria:</label>
+                <input type="text" v-model="category" placeholder="">
+                <p v-if="category.length > 15" >El nombre no puede tener más de 15 caracteres.</p>
+
+            
+             
+              
+            </form>
         </div>
     </div>
 </template>
