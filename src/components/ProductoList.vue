@@ -27,6 +27,31 @@
                 </tr>
             </tbody>
         </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Categoria</th>
+                    <th>Completado</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="proyecto in Productos" :key="proyecto.id">
+                    <td>{{ proyecto.id }}</td>
+                    <td>{{ proyecto.name }}</td>
+                    <td>{{ proyecto.quantity }}</td>
+                    <td>{{ proyecto.category }}</td>
+                    <td>{{ proyecto.completed}}</td>
+                    <td class="acciones">
+                        <button @click="marcarComoCompletado(proyecto)" class="completado">{{ proyecto.completed ? 'Completado' : 'Terminar' }}</button>
+                        <button @click="eliminarEntrada(proyecto.id)" class="eliminar">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
